@@ -1,0 +1,92 @@
+2024-07-22 15:51:49 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 69
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 77
+LINE: 151
+LINE: 168
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 59
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 67
+LINE: 73
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 13
+----------------------------------------------------------------
+MOD: E-Piksel Installer Allowed
+
+FILE: admin/controller/marketplace/install.php
+CODE: $safe = false;
+LINE: 146
+CODE: if (is_dir($file) && !is_dir($path)) {
+LINE: 215
+----------------------------------------------------------------
+2024-07-22 15:57:50 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 69
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 77
+LINE: 151
+LINE: 168
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 59
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 67
+LINE: 73
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 13
+----------------------------------------------------------------
+MOD: E-Piksel Installer Allowed
+
+FILE: admin/controller/marketplace/install.php
+CODE: $safe = false;
+LINE: 146
+CODE: if (is_dir($file) && !is_dir($path)) {
+LINE: 215
+----------------------------------------------------------------
+MOD: REST API
+
+FILE: admin/model/setting/setting.php
+CODE: class ModelSettingSetting extends Model {
+LINE: 7
+
+FILE: catalog/model/account/customer.php
+CODE: class ModelAccountCustomer extends Model {
+LINE: 114
+
+FILE: catalog/model/account/order.php
+CODE: class ModelAccountOrder extends Model {
+LINE: 265
+
+FILE: catalog/model/catalog/product.php
+CODE: public function getTotalProductSpecials() {
+LINE: 1215
+----------------------------------------------------------------
