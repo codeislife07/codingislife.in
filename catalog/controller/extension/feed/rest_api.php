@@ -435,7 +435,11 @@ class ControllerExtensionFeedRestApi extends RestController {
             //get category details
             if (isset($this->request->get['id']) && ctype_digit($this->request->get['id'])) {
                 $this->getCategory($this->request->get['id']);
-            }else {
+            }if (isset($this->request->get['package']) && ctype_digit($this->request->get['package'])) {
+                $this->getCategoryBypackageName($this->request->get['package']);
+            }
+            
+            else {
                 //get category list
 
                 /*check parent parameter*/
@@ -536,6 +540,40 @@ class ControllerExtensionFeedRestApi extends RestController {
         }
 
         $category = $this->model_catalog_category->getCategory($category_id);
+
+        if(isset($category['category_id'])){
+
+            $json['success']	= true;
+
+            if (isset($category['image']) && file_exists(DIR_IMAGE . $category['image'])) {
+                $image = $this->model_tool_image->resize($category['image'], 100, 100);
+            } else {
+                $image = $this->model_tool_image->resize('no_image.jpg', 100, 100);
+            }
+
+            $json['data']	= array(
+                'id'			=> $category['category_id'],
+                'name'			=> $category['name'],
+                'description'	=> $category['description'],
+                'image'         => $image
+            );
+        }else {
+            $json['success']     = false;
+            $json['error']       = "The specified category does not exist.";
+
+        }
+
+        $this->sendResponse($json);
+    }
+
+    public function getCategoryBypackageName($id) {
+
+        $json = array('success' => true);
+
+        $this->load->model('catalog/category');
+        $this->load->model('tool/image');
+
+        $category = $this->model_catalog_category->getCategoryByPackage($id);
 
         if(isset($category['category_id'])){
 
