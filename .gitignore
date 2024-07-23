@@ -2,3 +2,4 @@
 config.php
 .htaccess
 admin/config.php
+system/storage/
